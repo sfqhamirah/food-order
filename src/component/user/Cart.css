@@ -1,0 +1,85 @@
+.cart {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.cart > div {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.cart ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.cart li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart li button {
+    margin-left: 0.5rem;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background: white;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.cart-actions button {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+}
+
+.cart-remarks {
+    margin-bottom: 1.5rem;
+}
+
+.cart-remarks label {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.4rem;
+}
+
+.cart-remarks textarea {
+    width: 100%;
+    min-height: 60px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    resize: vertical;
+}
