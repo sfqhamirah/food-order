@@ -6,7 +6,7 @@ FoodyNerd is a responsive food ordering web application built with **React**, **
 
 ## 📸 Demo Video
 
-https://github.com/user-attachments/assets/8de35d71-c54f-4598-aa71-5267237952b5
+https://github.com/user-attachments/assets/b4a15217-70f4-47df-b364-0ac316773ced
 
 ## ✨ Features
 
