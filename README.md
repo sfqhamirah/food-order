@@ -1,63 +1,78 @@
-# FoodyNerd — Food Order App
+# 🍔 FoodyNerd — Food Ordering Web Application
 
-A React food ordering web app built with Vite, Material UI v4, Context API, and localStorage. Built as a React Practicum project for TalentLabs.
+FoodyNerd is a responsive food ordering web application built with **React**, **Vite**, **Material UI v4**, **Context API**, and **Cloudinary**. The application allows customers to browse food items, place orders, and enables administrators to manage the menu and review customer orders. Order history is stored locally using **localStorage**, while food images are uploaded and hosted through **Cloudinary**.
 
 ---
 
-## Features
+## 📸 Demo Video
 
-### User Side
+https://github.com/user-attachments/assets/8de35d71-c54f-4598-aa71-5267237952b5
 
-- Browse available food items in a card-based menu
-- Add items to cart
-- View cart in a modal (built with React Portals)
-- Modify item quantity or remove items from cart
-- Add optional remarks/notes to an order
-- Place order (saved to localStorage)
-- Switch to Admin view via the footer button
+## ✨ Features
 
-### Admin Side
+### 👤 Customer Features
+
+- Browse available food items
+- Add food items to the shopping cart
+- Increase or decrease item quantity
+- Remove items from the cart
+- Add optional remarks before placing an order
+- View the shopping cart in a modal using React Portals
+- Place an order
+- Switch to Admin mode using the footer button
+
+### 👨‍💼 Admin Features
 
 - View all available food items
-- Add new food items (name, description, price, image)
-- Upload item images to Cloudinary (cloud storage)
+- Add new food items
+- Upload food images to Cloudinary
 - Delete food items
-- View past orders (including items, quantities, remarks, and totals)
-- Switch back to User view via the footer button
+- View customer order history
+- Review ordered items, quantities, remarks, and total price
+- Switch back to Customer mode
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- **React** (Functional Components & Hooks)
-- **Vite** (Development server & build tool)
-- **Material UI v4** (`@material-ui/core`)
-- **Context API**
-  - `cart-context` – Manages shopping cart state
-  - `items-context` – Manages food items and Admin/User mode
-- **useReducer** – State management for cart and food items
-- **useState** – UI state management
-- **React Portals** – Cart modal rendering
-- **Cloudinary** – Image hosting for uploaded food images
-- **localStorage** – Stores order history
+### Frontend
+
+- React
+- Vite
+- Material UI v4
+
+### State Management
+
+- Context API
+- useReducer
+- useState
+
+### Storage
+
+- Cloudinary (Image Hosting)
+- localStorage (Order History)
+
+### Other
+
+- React Portals
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 src/
 │
 ├── component/
 │   ├── admin/
-│   │   ├── AdminForm.jsx          # Add food item form
-│   │   └── Orders.jsx             # Displays saved orders
+│   │   ├── AdminForm.jsx
+│   │   └── Orders.jsx
 │   │
 │   ├── user/
-│   │   ├── Appbar.jsx             # Navigation bar
-│   │   ├── Banner.jsx             # Hero section
-│   │   ├── AboutUs.jsx            # About section
-│   │   └── Cart.jsx               # Cart modal (React Portal)
+│   │   ├── Appbar.jsx
+│   │   ├── Banner.jsx
+│   │   ├── AboutUs.jsx
+│   │   └── Cart.jsx
 │   │
 │   ├── store/
 │   │   ├── cart-context.js
@@ -65,9 +80,9 @@ src/
 │   │   ├── items-context.js
 │   │   └── ItemsProvider.jsx
 │   │
-│   ├── Meals.jsx                  # Food menu grid
-│   ├── MealsItem.jsx              # Individual food card
-│   └── Footer.jsx                 # Admin/User mode toggle
+│   ├── Meals.jsx
+│   ├── MealsItem.jsx
+│   └── Footer.jsx
 │
 ├── pages/
 │   ├── Users.jsx
@@ -79,30 +94,44 @@ src/
 
 ---
 
-## Setup
+## 🚀 Getting Started
 
-### 1. Install Dependencies
+### Prerequisites
+
+Before running the project, make sure you have:
+
+- Node.js (v18 or later)
+- npm
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd FoodyNerd
+```
+
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 2. Create Environment Variables
+### 3. Configure Environment Variables
 
 Create a `.env` file in the project root.
 
 ```env
-VITE_CLOUDINARY_CLOUD_NAME=your-cloud-name
-VITE_CLOUDINARY_UPLOAD_PRESET=your-unsigned-upload-preset
+VITE_CLOUDINARY_CLOUD_NAME=your_cloud_name
+VITE_CLOUDINARY_UPLOAD_PRESET=your_unsigned_upload_preset
 ```
 
-### 3. Start the Development Server
+### 4. Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-### 4. Open the Application
+### 5. Open the Application
 
 ```
 http://localhost:5173
@@ -110,72 +139,98 @@ http://localhost:5173
 
 ---
 
-## How It Works
+## 🔄 How It Works
 
-### Customer Flow
+### Customer Workflow
 
-1. Browse the available food menu.
-2. Add food items to the cart.
-3. Update quantities or remove items.
-4. Add optional order remarks.
-5. Place an order.
+1. Browse the food menu.
+2. Add food items to the shopping cart.
+3. Modify item quantities or remove items.
+4. Add optional remarks.
+5. Place the order.
 6. Order details are saved to localStorage.
 
-### Admin Flow
+### Admin Workflow
 
-1. Switch to Admin mode using the footer button.
-2. Add new food items with image upload.
-3. Delete existing food items.
-4. Review customer order history.
+1. Switch to Admin mode from the footer.
+2. Add new food items.
+3. Upload food images to Cloudinary.
+4. Delete food items.
+5. Review customer order history.
 
 ---
 
-## Data Storage
+## 💾 Data Storage
 
 | Data | Storage |
 |------|---------|
-| Food Items | React Context (runtime) |
-| Cart | React Context |
+| Food Items | React Context (Runtime) |
+| Shopping Cart | React Context |
 | Order History | localStorage |
 | Food Images | Cloudinary |
 
 ---
 
-## Notes
+## 🧠 Key React Concepts Used
 
-- Uses **React 18** for compatibility with **Material UI v4**.
-- Cloudinary upload preset must be configured as **Unsigned** to allow direct browser uploads.
-- Default food items are seeded in `ItemsProvider.jsx`.
-- Food images use public Unsplash URLs for demonstration.
-- Orders are stored in localStorage.
-- No backend or database is used.
-
----
-
-## Known Limitations
-
-- No user authentication or login system.
-- Food items are not permanently stored in a database.
-- Cart state resets after a page refresh.
-- Checkout is simulated by saving the order to localStorage.
-- No payment gateway integration.
+- Functional Components
+- React Hooks (`useState`, `useReducer`, `useContext`)
+- Context API for global state management
+- React Portals for rendering the shopping cart modal
+- Component based architecture
+- Conditional rendering
+- Event handling
+- Props and state management
 
 ---
 
-## Future Improvements
+## 📌 Notes
+
+- Built with **React 18** for compatibility with Material UI v4.
+- Images are uploaded directly to Cloudinary using an unsigned upload preset.
+- Default food items are initialized in `ItemsProvider.jsx`.
+- Orders are stored locally in the browser using localStorage.
+- No backend server or database is required.
+
+---
+
+## ⚠️ Known Limitations
+
+- No user authentication or authorization
+- Food items are not permanently stored
+- Shopping cart resets after refreshing the page
+- Checkout process is simulated
+- No payment gateway integration
+- No backend API or database
+
+---
+
+## 🚀 Future Improvements
 
 - User authentication and authorization
-- Backend API with database integration
+- Backend API integration
+- Database support
 - Online payment gateway
 - Order status tracking
-- Search and category filters
-- Responsive admin dashboard
-- Persistent cart storage
+- Search functionality
+- Food category filtering
+- Responsive admin dashboard improvements
+- Persistent shopping cart
 - Edit existing food items
 - Inventory management
 
 ---
 
-## Author
+## 👨‍💻 Author
 
-Developed as part of the **TalentLabs React Practicum** using React, Vite, Material UI, Context API, Cloudinary, and localStorage.
+Developed as a learning project using:
+
+- React
+- Vite
+- Material UI v4
+- Context API
+- React Portals
+- Cloudinary
+- localStorage
+
+This project demonstrates React fundamentals, state management with Context API, image uploading, reusable component design, and basic CRUD functionality for a food ordering application.
